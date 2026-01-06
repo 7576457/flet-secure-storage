@@ -3,7 +3,7 @@ from dataclasses import dataclass, field, asdict
 from datetime import datetime
 from typing import Any
 
-from enums import (
+from flet_secure_storage.enums import (
     AccessControlFlag,
     KeychainAccessibility,
     KeyCipherAlgorithm,

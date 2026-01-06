@@ -3,7 +3,8 @@ from typing import Any
 
 from flet.controls.base_control import control
 from flet.controls.services.service import Service
-from options import (
+
+from flet_secure_storage.options import (
     AndroidOptions,
     IOSOptions,
     LinuxOptions,
