@@ -1,7 +1,7 @@
 # Flet Secure Storage
 
 [![en](https://img.shields.io/badge/lang-en-red.svg)](README.md)
-[![ru](https://img.shields.io/badge/lang-ru-blue.svg)](README.ru.md)
+[![ru](https://img.shields.io/badge/lang-ru-blue.svg)](docs/README.ru.md)
 
 Extension for [Flet](https://flet.dev) that provides secure data storage across all platforms via [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage).
 
