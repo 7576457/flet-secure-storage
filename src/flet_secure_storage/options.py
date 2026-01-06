@@ -44,7 +44,7 @@ class Options:
         return obj
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(slots=True)
 class AndroidOptions(Options):
     reset_on_error: bool = True
     migrate_on_algorithm_change: bool = True
@@ -57,7 +57,7 @@ class AndroidOptions(Options):
     biometric_prompt_subtitle: str = "Use biometrics or device credentials"
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(slots=True)
 class AppleOptions(Options):
     account_name: str | None = "flutter_secure_storage_service"
     group_id: str | None = None
@@ -76,28 +76,28 @@ class AppleOptions(Options):
     access_control_flags: list[AccessControlFlag] = field(default_factory=list)
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(slots=True)
 class IOSOptions(AppleOptions): ...
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(slots=True)
 class MacOsOptions(AppleOptions):
     uses_data_protection_keychain: bool = True
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(slots=True)
 class WebOptions(Options):
-    db_name: str = "FlutterEncryptedStorage"
-    public_key: str = "FlutterSecureStorage"
+    db_name: str = "FletEncryptedStorage"
+    public_key: str = "FletSecureStorage"
     wrap_key: str = ""
     wrap_key_iv: str = ""
     use_session_storage: bool = False
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(slots=True)
 class WindowsOptions(Options):
     use_backward_compatibility: bool = False
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(slots=True)
 class LinuxOptions(Options): ...

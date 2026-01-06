@@ -12,8 +12,8 @@ class SecureStorageService extends FletService {
     super.init();
     debugPrint("SecureStorageService(${control.id}).init: ${control.properties}");
     control.addInvokeMethodListener(_invokeMethod);
-
   }
+
   @override
   void update() {
     debugPrint("SecureStorageService(${control.id}).update: ${control.properties}");
@@ -28,13 +28,6 @@ class SecureStorageService extends FletService {
       webOptions: webOptions(jsonDecode(args["options"]["web"])),
       mOptions: macOptions(jsonDecode(args["options"]["macos"])),
     );
-    print("   ");
-    print("================================================");
-    print("   ");
-    print(args);
-    print("   ");
-    print("================================================");
-    print("   ");
     switch (name) {
       case "set":
         return storage.write(key: args["key"]!, value: args["value"]!);

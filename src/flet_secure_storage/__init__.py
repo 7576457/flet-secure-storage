@@ -7,7 +7,9 @@ from flet_secure_storage.enums import (
 from flet_secure_storage.options import (
     AndroidOptions,
     AppleOptions,
+    IOSOptions,
     LinuxOptions,
+    MacOsOptions,
     WebOptions,
     WindowsOptions,
 )
@@ -20,7 +22,9 @@ __all__ = [
     "StorageCipherAlgorithm",
     "AndroidOptions",
     "AppleOptions",
+    "IOSOptions",
     "LinuxOptions",
+    "MacOsOptions",
     "WebOptions",
     "WindowsOptions",
     "SecureStorage",
