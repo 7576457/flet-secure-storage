@@ -1,5 +1,5 @@
-name: fss
-description: Flet Fss control
+name: flet_secure_storage
+description: Flet Secure Storage control
 version: 0.1.0
 publish_to: none
 
