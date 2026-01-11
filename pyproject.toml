@@ -1,12 +1,12 @@
 [project]
 name = "flet-secure-storage"
 version = "0.1.0"
-description = "FletSecureStorage control for Flet"
+description = "SecureStorage control for Flet"
+authors = [{ name = "Flet contributors", email = "you@example.com" }]
 readme = "README.md"
 requires-python = ">=3.10"
-authors = [{ name = "Flet contributors", email = "you@example.com" }]
 dependencies = [
-    "flet>=0.80.1",
+    "flet",
 ]
 
 [project.urls]
