@@ -1,6 +1,7 @@
 from dataclasses import field
 from typing import Any
 
+import flet as ft
 from flet.controls.base_control import control
 from flet.controls.services.service import Service
 from flet_secure_storage.options import (
@@ -10,6 +11,7 @@ from flet_secure_storage.options import (
     WebOptions,
     WindowsOptions,
 )
+from flet_secure_storage.types import SecureStorageEvent
 
 
 @control("SecureStorage")
@@ -19,6 +21,14 @@ class SecureStorage(Service):
     windows_options: WindowsOptions = field(default_factory=lambda: WindowsOptions())
     macos_options: MacOsOptions = field(default_factory=lambda: MacOsOptions())
     web_options: WebOptions = field(default_factory=lambda: WebOptions())
+    on_change: ft.EventHandler["SecureStorageEvent"] | None = None
+
+    @property
+    async def is_availability(self) -> bool | None:
+        return await self._get_availability()
+
+    async def _get_availability(self) -> bool | None:
+        return self._invoke_method("get_availability")
 
     async def set(
         self,
@@ -66,6 +76,25 @@ class SecureStorage(Service):
             },
         )
 
+    async def get_all(
+        self,
+        web: WebOptions | None = None,
+        ios: IOSOptions | None = None,
+        macos: MacOsOptions | None = None,
+        android: AndroidOptions | None = None,
+        windows: WindowsOptions | None = None,
+    ) -> dict[str, Any]:
+        return await self._invoke_method(
+            method_name="get_all",
+            arguments={
+                "web": web,
+                "ios": ios,
+                "macos": macos,
+                "android": android,
+                "windows": windows,
+            },
+        )
+
     async def contains_key(
         self,
         key: str,
@@ -100,25 +129,6 @@ class SecureStorage(Service):
             method_name="remove",
             arguments={
                 "key": key,
-                "web": web,
-                "ios": ios,
-                "macos": macos,
-                "android": android,
-                "windows": windows,
-            },
-        )
-
-    async def get_all(
-        self,
-        web: WebOptions | None = None,
-        ios: IOSOptions | None = None,
-        macos: MacOsOptions | None = None,
-        android: AndroidOptions | None = None,
-        windows: WindowsOptions | None = None,
-    ) -> dict[str, Any]:
-        return await self._invoke_method(
-            method_name="get_all",
-            arguments={
                 "web": web,
                 "ios": ios,
                 "macos": macos,

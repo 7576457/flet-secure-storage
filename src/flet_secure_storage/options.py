@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 
-from flet_secure_storage.enums import (
+from flet_secure_storage.types import (
     AccessControlFlag,
     KeychainAccessibility,
     KeyCipherAlgorithm,

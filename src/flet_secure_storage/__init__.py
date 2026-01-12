@@ -1,9 +1,3 @@
-from flet_secure_storage.enums import (
-    AccessControlFlag,
-    KeychainAccessibility,
-    KeyCipherAlgorithm,
-    StorageCipherAlgorithm,
-)
 from flet_secure_storage.options import (
     AndroidOptions,
     AppleOptions,
@@ -13,12 +7,15 @@ from flet_secure_storage.options import (
     WindowsOptions,
 )
 from flet_secure_storage.secure_storage import SecureStorage
+from flet_secure_storage.types import (
+    AccessControlFlag,
+    KeychainAccessibility,
+    KeyCipherAlgorithm,
+    SecureStorageEvent,
+    StorageCipherAlgorithm,
+)
 
 __all__ = [
-    "AccessControlFlag",
-    "KeychainAccessibility",
-    "KeyCipherAlgorithm",
-    "StorageCipherAlgorithm",
     "AndroidOptions",
     "AppleOptions",
     "IOSOptions",
@@ -26,4 +23,9 @@ __all__ = [
     "WebOptions",
     "WindowsOptions",
     "SecureStorage",
+    "AccessControlFlag",
+    "KeychainAccessibility",
+    "KeyCipherAlgorithm",
+    "SecureStorageEvent",
+    "StorageCipherAlgorithm",
 ]

@@ -1,4 +1,12 @@
+from dataclasses import dataclass
 from enum import Enum
+
+import flet as ft
+
+
+@dataclass
+class SecureStorageEvent(ft.Event["SecureStorage"]):  # type: ignore
+    available: bool | None
 
 
 class KeychainAccessibility(Enum):
